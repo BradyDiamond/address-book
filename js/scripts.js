@@ -35,14 +35,7 @@ function Contact(firstName, lastName, phoneNumber, eMailAddress, addressValue,) 
   this.lastName = lastName;
   this.phoneNumber = phoneNumber;
   this.eMailAddress = eMailAddress;
-  // this.address = address; 
-  // let address = {
-  //   locations: [home,work]
-  // };
-  // let home= home;
   this.address= addressValue;
-  
-
 }
 
  function AddressValue(home,work) {
@@ -51,18 +44,12 @@ function Contact(firstName, lastName, phoneNumber, eMailAddress, addressValue,) 
  }
 
 
-
-
-
-
-
 Contact.prototype.fullName = function() {
   return this.firstName + " " + this.lastName;
 };
 
 // User Interface Logic ---------
 let addressBook = new AddressBook();
-// let address = new Address (home, work);
 
 function displayContactDetails(addressBookToDisplay) {
   let contactsList = $("ul#contacts");
@@ -119,8 +106,6 @@ $(document).ready(function() {
     $("input#new-phone-number").val("");
     $("input#new-email-address").val("");
     var newContact = new Contact(inputtedFirstName, inputtedLastName, inputtedPhoneNumber, inputtedEMailAddress, new AddressValue(home,work));
-    // var newAddress  = new Address(home,work,);
-    // console.log(newAddress);
     addressBook.addContact(newContact);
     displayContactDetails(addressBook);
   });
